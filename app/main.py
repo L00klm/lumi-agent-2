@@ -208,6 +208,8 @@ async def api_info() -> dict:
     }
 
 
+# 똑바로 해라
+
 # ===== 직접 실행 시 =====
 if __name__ == "__main__":
     import uvicorn
