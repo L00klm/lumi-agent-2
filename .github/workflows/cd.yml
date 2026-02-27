@@ -33,11 +33,13 @@ on:
   push:
     branches: [main]
     paths:
-      - 'DAY5-MISSION/app/**'
-      - 'DAY5-MISSION/Dockerfile'
-      - 'DAY5-MISSION/docker-compose.yml'
-      - 'DAY5-MISSION/pyproject.toml'
-      - 'DAY5-MISSION/uv.lock'
+      - 'app/**'
+      - 'tests/**'
+      - 'Dockerfile'
+      - 'docker-compose.yml'
+      - 'pyproject.toml'
+      - 'uv.lock'
+      - '.github/workflows/cd.yml'
 
   # 수동 실행 허용 (긴급 배포/롤백용)
   workflow_dispatch:
