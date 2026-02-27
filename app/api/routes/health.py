@@ -9,20 +9,23 @@ Production 환경에서 필수적인 헬스체크 API입니다.
     GET /health/ready    - 준비 상태 확인 (DB 연결 등)
 """
 
-from datetime import datetime, timezone
+from datetime import UTC, datetime
+
 from fastapi import APIRouter
+
 from app.core.config import settings
 
 # TODO 1: APIRouter 인스턴스 생성
 router = APIRouter()
+
 
 # TODO 2: 헬스체크 엔드포인트 구현
 @router.get("/")
 async def health_check() -> dict:
     return {
         "status": "healthy",
-        "timestamp": datetime.now(timezone.utc).isoformat(),
+        "timestamp": datetime.now(UTC).isoformat(),
         "service": "lumi-agent",
         "version": "0.5.0",
-        "environment": settings.environment
+        "environment": settings.environment,
     }
