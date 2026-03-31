@@ -10,7 +10,7 @@ uv sync
 cp .env.example .env
 ```
 
-## 실행
+## 실행 하기
 
 ```bash
 # Docker 이미지 빌드
